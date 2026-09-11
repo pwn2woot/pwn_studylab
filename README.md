@@ -16,9 +16,9 @@
 
 | 번호 | 문제 | 난이도 | 설명 |
 |:---:|------|:------:|------|
-| 01 | [랜덤 비밀번호 입력 — `01_menu`](pwntools_training/#01-menu) | 기초 | 메뉴 자동화, 비밀번호 추출, `sendlineafter()` |
-| 02 | [64비트 정수 전송 — `02_pack64`](pwntools_training/#02-pack64) | 기초 | 리틀 엔디언, `p64()`, `sendafter()` |
-| 03 | [3초 덧셈 계산기 — `03_rounds`](pwntools_training/#03-rounds) | 기초 | 숫자 추출, 반복문, `sendline()` |
+| 01 | [랜덤 비밀번호 입력 — `01_menu`](pwntools_training/README.md#01-menu) | 기초 | 메뉴 자동화, 비밀번호 추출, `sendlineafter()` |
+| 02 | [64비트 정수 전송 — `02_pack64`](pwntools_training/README.md#02-pack64) | 기초 | 리틀 엔디언, `p64()`, `sendafter()` |
+| 03 | [3초 덧셈 계산기 — `03_rounds`](pwntools_training/README.md#03-rounds) | 기초 | 숫자 추출, 반복문, `sendline()` |
 
 ## Getting Started
 
