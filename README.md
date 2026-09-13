@@ -27,6 +27,7 @@
 | 번호 | 문제 | 난이도 | 설명 |
 |:---:|------|:------:|------|
 | 01 | [셸 호출 함수 실행 — `bof`](BufOverfow/README.md#01-bof) | 기초 | 바이너리 내부의 셸 호출 함수 실행 |
+| 02 | [비밀번호 변경 — `password_bof`](BufOverfow/README.md#02-password-bof) | 기초 | 오버플로로 비밀번호를 변경한 뒤 인증해 셸 획득 |
 
 ## Getting Started
 
