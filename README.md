@@ -29,6 +29,14 @@
 | 01 | [셸 호출 함수 실행 — `bof`](BufOverfow/README.md#01-bof) | 기초 | 바이너리 내부의 셸 호출 함수 실행 |
 | 02 | [비밀번호 변경 — `password_bof`](BufOverfow/README.md#02-password-bof) | 기초 | 오버플로로 비밀번호를 변경한 뒤 인증해 셸 획득 |
 
+### [Canary](Canary/)
+
+스택 카나리와 정보 누출(leak)을 학습하기 위한 문제 모음입니다.
+
+| 번호 | 문제 | 난이도 | 설명 |
+|:---:|------|:------:|------|
+| 01 | [카나리 누출 연습 — `canary_leak`](Canary/README.md#01-canary-leak) | 기초 | 오버플로로 카나리의 널 바이트를 덮어 leak 연습 |
+
 ## Getting Started
 
 저장소를 내려받습니다.
