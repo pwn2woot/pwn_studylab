@@ -36,6 +36,7 @@
 | 번호 | 문제 | 난이도 | 설명 |
 |:---:|------|:------:|------|
 | 01 | [카나리 누출 연습 — `canary_leak`](Canary/README.md#01-canary-leak) | 기초 | 오버플로로 카나리의 널 바이트를 덮어 leak 연습 |
+| 02 | [카나리 누출 후 ret2win — `canary_ret2win`](Canary/README.md#02-canary-ret2win) | 쉬움 | 이름 출력에서 카나리를 구한 뒤 `win()`으로 복귀해 셸 실행 |
 
 ## Getting Started
 
