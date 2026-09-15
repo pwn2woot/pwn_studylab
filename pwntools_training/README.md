@@ -9,6 +9,7 @@ Pwntools로 프로그램의 표준 입력과 출력을 다루는 연습 문제 �
 | [01_menu](#01-menu) | 랜덤 비밀번호 입력 | 비밀번호 제출 1초 | 메뉴 자동화, 비밀번호 추출, `sendlineafter()` |
 | [02_pack64](#02-pack64) | 64비트 정수 전송 | 없음 | 리틀 엔디언, `int(..., 16)`, `p64()`, `sendafter()` |
 | [03_rounds](#03-rounds) | 3초 덧셈 계산기 | 10라운드 전체 3초 | 숫자 추출, `str(...)`, 반복문, `sendline()` |
+| [maze_golf](#04-maze-golf) | Maze Golf — 최단 코드 미로 탈출 | 게임 30초 | `process()`, `send()`, 파일 바이트 수 최적화 |
 
 ## 실행 방법
 
@@ -18,7 +19,7 @@ Pwntools로 프로그램의 표준 입력과 출력을 다루는 연습 문제 �
 
 ```bash
 cd pwntools_training
-chmod +x 01_menu 02_pack64 03_rounds
+chmod +x 01_menu 02_pack64 03_rounds maze_golf Score
 ```
 
 원하는 문제를 하나씩 실행합니다.
@@ -27,6 +28,7 @@ chmod +x 01_menu 02_pack64 03_rounds
 ./01_menu
 ./02_pack64
 ./03_rounds
+./maze_golf
 ```
 
 자동화 스크립트를 작성할 때는 해당 Python 환경에 Pwntools가 설치되어 있어야 합니다.
@@ -110,3 +112,51 @@ ROUND 1/10
 - 10라운드를 모두 맞히면 FLAG가 출력됩니다.
 
 **연습 내용:** 출력에서 숫자 추출, 덧셈, `str(...)`로 정수를 문자열로 변환, 반복문과 `sendline()`으로 답 전송.
+
+<a id="04-maze-golf"></a>
+
+## 04. Maze Golf — 최단 코드 미로 탈출
+
+**제공 파일:** [maze_golf](maze_golf) · [Score](Score)
+
+고정된 미로에서 `@` 캐릭터를 움직여 `E` 출구에 도착하는 문제입니다.
+
+```text
+@ : 플레이어
+E : 출구
+# : 벽
+. : 이동 가능한 길
+```
+
+조작 키는 `W`, `A`, `S`, `D`이며 대소문자를 모두 지원합니다. 터미널에서 직접 실행하면 키를 누르는 즉시 캐릭터가 움직이고, 30초 안에 출구에 도착하면 FLAG가 출력됩니다.
+
+이 문제의 최종 목표는 미로를 푸는 것뿐 아니라, 정상적으로 탈출하는 **Pwntools 풀이 파일의 실제 바이트 수를 최대한 줄이는 것**입니다. 풀이 파일에서는 이름이 고정된 문제 바이너리를 실행합니다.
+
+```python
+from pwn import *
+
+p = process('./maze_golf')
+# WASD 경로 전송
+```
+
+### 채점
+
+작성한 Python 파일을 `Score`의 첫 번째 인자로 전달합니다. 솔버 파일명은 자유입니다.
+
+```bash
+./Score solve.py
+./Score test.py
+./Score ex.py
+```
+
+채점기는 매번 다른 검증 토큰을 사용해 제출 코드를 5번 실행합니다. 5번 모두 실제 미로 탈출 후 동적 FLAG가 출력돼야 점수를 보여줍니다.
+
+```text
+[*] Solver: solve.py
+[*] File size: 143 bytes
+[+] Verification: 5/5
+[+] FLAG verified: 5/5
+[+] SCORE: 143 bytes
+```
+
+점수는 공백, 개행, 주석을 모두 포함한 Python 파일의 실제 크기입니다. Pwntools를 import한 UTF-8 Python 파일이어야 하며 최대 크기는 4096바이트입니다. 점수는 저장하지 않습니다.
