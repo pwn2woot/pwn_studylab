@@ -39,6 +39,18 @@
 | 01 | [카나리 누출 연습 — `canary_leak`](Canary/README.md#01-canary-leak) | 기초 | 오버플로로 카나리의 널 바이트를 덮어 leak 연습 |
 | 02 | [카나리 누출 후 ret2win — `canary_ret2win`](Canary/README.md#02-canary-ret2win) | 쉬움 | 이름 출력에서 카나리를 구한 뒤 `win()`으로 복귀해 셸 실행 |
 
+### [Image CTF](Image_CTF/)
+
+이미지 파일을 분석해 숨겨진 정보를 찾아내는 문제 모음입니다.
+
+| 번호 | 문제 | 난이도 | 설명 |
+|:---:|------|:------:|------|
+| 01 | [1번 문제](Image_CTF/README.md#01-1번-문제) | - | 뭔가 늘릴 수 있는 방법이....? |
+| 02 | [2번 문제](Image_CTF/README.md#02-2번-문제) | - | 색깔놀이 그 이상이 설명은 생략한다. |
+| 03 | [3번 문제](Image_CTF/README.md#03-3번-문제) | - | 내부를 들여다봐라... |
+| 04 | [4번 문제](Image_CTF/README.md#04-4번-문제) | - | 내부를 들여다봐라....2 |
+| 05 | [5번 문제](Image_CTF/README.md#05-5번-문제) | - | 진짜 자세히 봐라 |
+
 ## Getting Started
 
 저장소를 내려받습니다.
